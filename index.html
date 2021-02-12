@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Aladin' rel='stylesheet'>
+</head>
+<body>
+
+<h1> Emman VauvAlias </h1>
+<br>
+
+<div class="container">
+
+<div class="left">
+<img src="/pic.png" width="450"/>
+</div>
+
+<div class="right">
+<button class=button onclick="randomWordPicker()">Uusi sana, kiitos!</button> <br/>
+<br>
+<p>Selitä sana:</p>
+
+<p class=p1 id="theAnswer"></p>
+</div>
+
+<script> 
+
+function randomWordPicker() {
+    fetch('/sanat')
+    .then(response => response.text())
+    .then(data => document.getElementById("theAnswer").innerText = data)
+}
+
+
+</script>
+
+</div>
+
+</body>
+</html> 
